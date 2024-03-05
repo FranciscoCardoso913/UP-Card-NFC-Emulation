@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{indentfirst}
+
+
+\begin{document}
+
+\title{Estudo de Mercado para Carteiras Digitais}
+\maketitle
+
+\section{Introdução}
+
+Nos últimos anos, as carteiras digitais emergiram como uma tendência dominante, proporcionando aos utilizadores a conveniência de transportar e utilizar os seus cartões de pagamento, juntamente com uma variedade de outros documentos, como cartões de Identificação e bilhetes de transporte, de forma totalmente digital. Ao armazenar esses documentos de forma segura e encriptada, estas aplicações não apenas oferecem praticidade, mas também garantem a segurança dos dados sensíveis dos utilizadores.
+
+\indent Adicionalmente, as carteiras digitais constituem uma abordagem mais verde e sustentável, uma vez que reduzem a necessidade de cartões físicos e papel, contribuindo para a preservação do meio ambiente.
+
+Devido a importância desse projeto e a nossa falta de conhecimento prévio, decidimos realizar um estudo aprofundado do mercado para identificar a melhor abordagem possível. Nesse sentido, analisamos diversas aplicações que utilizam tecnologias como NFC (Near Field Communication), carteiras digitais e outros projetos de outras universidades que também migraram de cartões físicos para cartões virtuais. Esta pesquisa abrangente permitiu-nos adquirir conhecimentos valiosos sobre as tendências atuais, as práticas eficazes, fornecendo uma base sólida para a conceção e implementação do nosso próprio projeto.
+
+\section{NFC}
+
+A tecnologia NFC é uma tecnologia que permite a troca de informação entre dispositivos compatíveis a uma distância muito curta, geralmente até 4cm. Os dispositivos que dispõem desta tecnologia, quando dispostos próximos uns dos outros são capazes de criar um campo de frequências radio que os possibilita de se comunicar.
+
+\subsection{Modos Principais de operação}
+\begin{itemize}
+    \item \textbf{Modo Leitor/Escritor: } Neste modo, o dispositivo NFC funciona como um leitor que pode interagir com tags NFC passivas (como cartões ou etiquetas) para ler ou escrever informações nelas. Este modo é utilizado para pagamentos contactless, acesso a instalações, etc...
+    \item \textbf{Modo Emulação de Cartão: } Neste modo, o dispositivo NFC funciona como se fosse um cartão NFC, permitindo que este seja detetado e lido por outros dispositivos, como terminais de pagamento ou leitores de acesso a instalações;
+    \item \textbf{Modo Peer-to-Peer: } Neste modo, dois dispositivos NFC podem trocar informações entre si de forma bidirecional. Isso permite a comunicação direta entre os dispositivos, facilitando a transferência de dados, como troca de arquivos, compartilhamento de informações ou até mesmo pagamentos móveis entre os dispositivos.
+\end{itemize}
+
+Dos modos de operação existentes o modo de emulação de cartão (Card Emulation Mode) é particularmente relevante, pois permite que dispositivos móveis atuem
+como cartões universitários, facilitando o acesso a serviços e instalações da universidade, e
+até mesmo o uso para identificação estudantil digital. Adicionalmente permite pagamentos, algo que deverá ser possível de realizar com os nossos cartões.
+De forma a perceber melhor como implementar melhor estes modos decidimos analisar em que situações é que o NFC é utilizado e em que casos é que é mais eficaz, algumas das aplicações analisadas foram:
+
+\begin{itemize}
+    \item \textbf{MB Way:} Uma aplicação de pagamento móvel que permite realizar diversas transações através do telemóvel. Usa o NFC para fazer pagamentos em lojas físicas, para tal basta aproximar o telemóvel do terminal de leitura.
+    \item \textbf{Chave Móvel Digital:} Um aplicação de autenticação digital que permite aos cidadãos portugueses aceder a diversos serviços online com o seu telemóvel .Usam o NFC para autenticar o utilizador em serviços online, para tal basta aproximar o telemóvel do terminal de leitura.
+    \item \textbf{App Anda:} Uma aplicação de pagamento de viagens em transportes públicos na Área Metropolitana do Porto. Usa o NFC para pagar viagens, basta aproximar o cartão ao validador.
+\end{itemize}
+
+
+\section{Carteiras Digitais}
+
+As carteiras digitais são plataformas virtuais que permitem aos utilizadores armazenar e gerir informações financeiras e pessoais de forma eletrónica. Elas facilitam pagamentos online e em lojas físicas, oferecendo praticidade e segurança. As carteiras digitais estão se tornando populares devido à conveniência de armazenar múltiplos cartões e à proteção adicional contra fraudes.
+
+\subsection{Casos de Uso}
+
+\begin{itemize}
+    \item \textbf{Cartão universitário:} O utilizador pode utilizar o seu cartão virtual tal como se fosse o seu cartão físico agilizando o processo na utilização de serviços universitários;
+    \item \textbf{Pagamentos em lojas físicas:} O utilizador pode pagar as suas compras em lojas físicas, utilizando os seus cartões de pagamento virtuais e evitando a utilização de cartões físicos;
+    \item \textbf{Identificação:} O utilizador pode utilizar a sua carteira digital para se identificar quando necessário;
+    \item \textbf{Bilhetes de transportes:} O utilizador pode possuir um passe de transportes virtual, tal como um bilhete de transporte, evitando a necessidade de possuir um bilhete físico;
+\end{itemize}
+
+
+A nossa aplicação será uma carteira digital que se concentrará nos casos de uso de um cartão universitário e de identificação. Apesar disso, não diferirá muito de outras aplicações que usem carteiras digitais para outros fins, pelo que estas poderão ser usadas como exemplos. De forma a desenvolver uma boa implementação de uma carteira digital analisamos algumas aplicações já existentes.
+
+\subsection{Apple Wallet}
+A Apple Wallet é uma das carteiras digitais mais populares, sendo possível utilizar a mesma em produtos da Apple que não os seus telemóveis, como por exemplo o Apple Watch e IPad. Para além disso considerando a possibilidade de adicionar cartões de pagamento, a Apple Wallet permite a utilização do Apple Pay, um serviço de pagamentos da Apple que facilita a realização de pagamentos em lojas físicas e online. Não obstante, esta carteira digital é integrada em muitos outros serviços que permitem os seus utilizadores adicionar cartões de fidelização, bilhetes de transportes, entre outros.
+
+De forma a garantir segurança aos seus utilizadores, cartões como os de fidelização, documentos de identificação, entre outros, necessitam de um certificado confiável para serem adicionados à carteira digital, garantindo que são genuínos.
+Apesar dos cartões de pagamento na Apple wallet também necessitarem de garantir a sua elegibilidade, nestes cartões, a Apple wallet comunica com o fornecedor do cartão, garantindo a legitimidade do mesmo e os utilizadores autenticam-se para garantir que são os proprietários do cartão. Para minimizar o risco de comprometer o roubo de informação, um token único, que guarda as informações do cartão, é gerado e encriptado no 'Secure Element Chip' do dispositivo, garantindo que a informação do cartão não é partilhada.
+
+
+\subsection{Google Wallet}
+Tal como a Apple Wallet, também a Google Wallet é das carteiras digitais mais populares. Permite tal como a anterior, a adição de diversos tipos de cartões, podendo ser utilizada em outros dispositivos que não apenas os telemóveis. Para além disso, a Google Wallet permite a utilização do Google Pay, um serviço que garante ao utilizador a possibilidade de realizar pagamentos.
+A Google Wallet, para certificar a elegibilidade dos cartões adicionados, necessita que os fornecedores destes tenham utilizado um certificado legitimo. No caso de cartões utilizados para pagamentos, a Google Wallet comunica com o banco do utilizador e verifica a identidade do mesmo através da autenticação do utilizador. Tal como acontece com a Apple Wallet, de forma a garantir a segurança das informações dos cartões de pagamento, utiliza-se um token único que encripta a informação do cartão.
+
+\section{Panorama do Mercado Educacional e Universitário}
+No âmbito de um estudo preliminar sobre o setor educacional superior, dedicamo-nos a explorar o atual estado da inovação, com especial atenção às instituições
+que já implementaram o cartão virtual de estudante. Este interesse nasce da
+crescente tendência de digitalização dos serviços académicos, visando tanto a
+otimização de processos como a melhoria da experiência estudantil.
+
+\subsection{Adoção Internacional de Cartões de Estudante Digitais}
+A Google Wallet já facilita a utilização de cartões de estudante digitais em
+diversas faculdades situadas na Austrália, Estados Unidos e Canadá, indicando
+um avanço significativo na adoção desta tecnologia em escala global. Entre as
+instituições pioneiras nesta iniciativa encontram-se:
+
+\begin{itemize}
+    \item \textbf{Universidade Monash, Austrália: }A Universidade Monash destaca-se pela
+          sua inovação com o M-Pass, que se integra com Google Wallet e Apple Wallet.
+          Este sistema não só reflete a adaptabilidade às tendências tecnológicas
+          emergentes, mas também evidencia o potencial de transformação dos
+          serviços académicos através da digitalização. A aquisição do M-Pass requer
+          que os estudantes se autentiquem com as suas credenciais académicas e
+          validem a sua identidade através da submissão de um documento oficial
+          (passaporte ou carta de condução). Este processo enfatiza a segurança e a
+          autenticação rigorosa, fundamentais para o êxito de tais iniciativas digitais.
+          Através da aplicação da universidade, os estudantes podem carregar créditos
+          no cartão, embora a totalidade das suas funcionalidades não tenha sido
+          totalmente especificada.
+    \item \textbf{Universidade de York, Canadá: }O YU-Card, implementado pela Universidade
+          de York, proporciona aos estudantes uma forma prática de aceder a uma
+          vasta gama de serviços e espaços universitários. Diferentemente do M-Pass,
+          o YU-Card é recarregável através do website da universidade, uma
+          abordagem que distingue esta solução daquelas que preferem aplicações
+          móveis dedicadas.
+\end{itemize}
+
+\subsection{Perspectivas Europeias}
+Na Europa, a iniciativa do European Student Card (ESC) visa, até 2025,
+disponibilizar uma solução digital para as instituições de ensino superior
+participantes do programa Erasmus+. Este esforço reflete um compromisso com
+a mobilidade estudantil e a integração de serviços académicos através de
+plataformas digitais, marcando um passo importante na direção da unificação e
+simplificação dos processos educativos a nível europeu.
+
+
+% Here you can write a conclusion about your market analysis.
+\begin{thebibliography}{9}
+    \bibitem{ApplePaycomponentsecurity}
+    \textit{Apple Pay Component Security},
+    \url{https://support.apple.com/guide/security/apple-pay-component-security-sec2561eb018/web}
+
+    \bibitem{applewallet}
+    \textit{Apple Wallet},
+    \url{https://developer.apple.com/wallet/get-started/}
+
+    \bibitem{applepay}
+    \textit{Apple Pay},
+    \url{https://support.apple.com/en-us/HT203027}
+
+    \bibitem{genericPass}
+    \textit{Generic Cards},
+    \url{https://developers.google.com/wallet/generic}
+
+    \bibitem{googlewallet}
+    \textit{Google Wallet},
+    \url{https://wallet.google/}
+
+    \bibitem{googlepay}
+    \textit{Google Pay},
+    \url{https://developers.google.com/pay/issuers/tsp-integration/overview}
+
+    \bibitem{monash}
+    \textit{Monash University},
+    \url{https://www.monash.edu/students/support/connect/id}
+
+    \bibitem{york}
+    \textit{York University},
+    \url{https://www.yorku.ca/yucard/}
+
+    \bibitem{esc}
+    \textit{European Student Card},
+    \url{https://erasmus-plus.ec.europa.eu/european-student-card-initiative/card/about}
+
+    \bibitem{campusMobileWallet}
+    \textit{Campus Mobile Wallet},
+    \url{https://en.wikipedia.org/wiki/List_of_campus_identifications_in_mobile_wallets}
+
+\end{thebibliography}
+\end{document}
