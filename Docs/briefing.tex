@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\title{Development of a Virtual Card Prototype for the University of Porto }
+
+
+\author{Requirements and Functionalities Analysis}
+\date{}
+
+
+\begin{document}
+\maketitle
+March 5, 2024
+
+\section*{General Objective}
+Development of a prototype for the virtual card of the University of Porto (U.Porto) with NFC technology. This virtual card will reapply the functionalities of the physical card, allowing its use through a digital Wallet integrated into mobile devices.
+
+\section*{Actors}
+The primary users of this system encompass a broad spectrum of the University of Porto community members who are current holders of a physical institutional card. This includes but is not limited to students, faculty members, administrative and support staff, and other university personnel. The system is designed to cater to the diverse needs of this wide-ranging group, providing a seamless transition to a more digital and convenient form of access and identification across university services and facilities. Each actor, regardless of their specific role within the university, stands to benefit from the enhanced convenience, security, and efficiency offered by the virtual card system.
+
+\section*{Requirements Gathering}
+\begin{itemize}
+  \item Users will have access to their virtual card through a mobile digital Wallet.
+  \item An application will be developed that will enable users to acquire a certificate for their card, provided they authenticate correctly.
+  \item The system must include a robust and secure mechanism for generating and issuing cryptographic credentials. This feature should ensure the integrity and authenticity of digital certificates used for user authentication.
+  \item System administrators should have a control panel that allows them to manage the system and perform various operations.
+  \item Users will be able to report problems or suggest improvements in the application through an implemented feedback system (suggestion).
+  \item Internally, the development of the application, along with all auxiliary components, will be thoroughly documented and tested using unit tests. This ensures the application functions correctly and facilitates a clear understanding of the various developed components that make up the final product.
+\end{itemize}
+
+\section*{Use Case: Acquisition of the Virtual Card}
+Context: A member of the University of Porto seeks to transition from frequently using their physical card to adopting a virtual version. The primary objective is to reduce the necessity of carrying a physical card. To achieve this, the member must securely obtain the virtual card through a digital process that ensures authentication and verification.
+
+\section*{Steps}
+\begin{enumerate}
+  \item Application Access: The user initiates the transition by accessing a dedicated application designed for the digital credential issuance process. The specific application to be used is to be determined.
+
+  \item User Authentication: Upon entering the application, the user authenticates themselves using their University of Porto credentials. Alternative authentication methods may be considered for implementation to ensure security and ease of access.
+
+  \item Virtual Card Issuance: Following successful authentication, the user formally requests their virtual card. The application then generates and assigns a digital certificate, effectively issuing the virtual card.
+
+\end{enumerate}
+
+Result: The user successfully acquires their NFC-enabled virtual card, fully equipped with the necessary cryptographic credentials for secure identification and access within the University of Porto's ecosystem.
+
+\section*{Use Case: Utilizing the Virtual Card through a Digital Wallet at the University of Porto}
+Context: A university member is now equipped with their NFC-enabled virtual card stored within a digital wallet app on their mobile device. They aim to utilize this virtual card for various campus services that previously required a physical card.
+
+\section*{Steps}
+\begin{enumerate}
+  \item Opening the Digital Wallet: The user unlocks their mobile device and opens the digital wallet application where the virtual card is securely stored.
+
+  \item Selecting the Virtual Card: Within the digital wallet, the user selects the U.Porto virtual card, preparing it for use by activating the NFC feature on their device.
+
+  \item Accessing Campus Services: The user approaches an NFC-enabled terminal and bring their device close to the NFC reader.
+
+  \item Transaction Confirmation: The NFC-enabled terminal reads the virtual card's cryptographic credentials, verifies the user's identity and permissions, and processes the transaction or grants access accordingly.
+
+  \item Visual/Audible Confirmation: Upon successful verification and transaction completion, the terminal provides a visual and/or audible confirmation to the user. The digital wallet may also display a transaction summary or access granted notification.
+
+\end{enumerate}
+
+Result: The university member seamlessly utilizes their NFC-enabled virtual card for a wide range of services across campus, enjoying a convenient and secure experience.
+
+*When we mention the term "digital certificate," we are referring to cryptographic technologies used for user authentication, covering more than just the digital certificates themselves.
+
+
+\end{document}
