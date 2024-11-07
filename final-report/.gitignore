@@ -1,0 +1,51 @@
+# LaTeX gitignore
+
+# Auxiliary and intermediate files
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.fls
+*.fdb_latexmk
+*.xdv
+
+# Generated figures
+*-figure*.pdf
+*-figure*.md5
+*-figure*.dpth
+
+# Backup files
+*.bak
+*~
+
+# Other files to ignore
+*.pdfsync
+*.synctex(busy)
+*.pdfsync(busy)
+*.synctex.gz(busy)
+*.brf
+Makefile
+
+# Exclude generated PDFs if desired
+#*.pdf
